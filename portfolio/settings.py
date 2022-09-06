@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$ukx9fevok@40m_ds)!ik-wy%0vz^u6r5mc#_qhhc@&38v9*gl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ 'judekennywise.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -126,5 +126,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+MEDIA_URL = "/media/"
+#MEDIA_ROOT = 'BASE_DIR / project_images'
+# for django version < 3.1
+# import os at the top
+MEDIA_ROOT = os.path.join(BASE_DIR, 'project_images/')
+
 
 

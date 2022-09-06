@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 
-
+{% load static %}
 {% block page_content %}
 
-<div class="about">
-    <img src="https://scontent.flos1-2.fna.fbcdn.net/v/t39.30808-6/264369925_2174268549397031_3979142829630566948_n.jpg?stp=c0.23.206.206a_dst-jpg_p206x206&_nc_cat=104&ccb=1-7&_nc_sid=da31f3&_nc_eui2=AeFlEgKuy8_C5pGfNDyqIIQYW1lVwzm36MdbWVXDObfox6H4D-jkDXCFTUnDZ54YSvfWqexk8qt3-3-MjWUUqIsy&_nc_ohc=kq3XBisrsJUAX9iwets&_nc_zt=23&_nc_ht=scontent.flos1-2.fna&oh=00_AT-yxIAobgxoruaKONLNVNz--7h-pF_zY6Z7iBJvEdD_9A&oe=62F35867" alt="jude picture"><br>
-    <h2>Hi! It's Jude</h2>
-    <p>I'm a backenend web developer and a tech-enthusiast.
+<div class="col-md-8 offset-md-2">
+
+    <div class="col-md-8">
+         <img src="{% static '/img/jude.jpg' %}" width="50%" height="60%" style="vertical-align:middle;margin:5px 50px"><br>
+    </div>
+<div class="col-md-8 offset-md-2">
+          <h2 >Hi! It's Jude</h2>
+    <p>I'm a backend web developer and a tech enthusiast.
+         Kindly checkout my <a href="{% url 'blog_index' %}" >Blog</a> to explore tech related content.<br>
+
 
     </p>
     <h4></h4>
     <p>You can connect with me through any of the social media below</p>
-</div>
+
 
 
         <div class="about">
@@ -24,8 +30,9 @@
                 <a href="https://www.github.com/judekennywise" target="_blank"><i class="fab fa-github"></i></a>
                  <a href="https://wa.link/q7r2c3" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
+            <p>Thanks for visiting.</p>
         </div>
+</div>
 
-
-
+</div>
 {% endblock %}

@@ -1,8 +1,11 @@
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
+from django.views.generic import ListView
+
 from blog.models import Post, Comment
 from blog.forms import CommentForm
 def blog_index(request):
@@ -48,3 +51,14 @@ def blog_detail(request, pk):
     }
 
     return render(request, 'blog_detail.html', context)
+
+
+class Search(ListView):
+    model = Post
+    template_name = 'search.html'
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        object_list = Post.objects.filter(
+            Q(title__icontains=query) | Q(body__icontains=query)
+        )
+        return object_list
